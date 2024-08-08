@@ -1,10 +1,12 @@
 import streamlit as st
 import openai
 from dotenv import load_dotenv
+from openai import OpenAI
 import base64
 
 load_dotenv()
-openai.api_key = "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"  # Ensure your API key is set here or via .env file
+openai = OpenAI()
+
 
 def dalle_completions(prompt, image_data):
     try:
