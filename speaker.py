@@ -7,13 +7,12 @@ load_dotenv()
 
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 speech_file_path = Path(__file__).parent / "speech.mp3"
-
 # Create speech
 response = client.audio.speech.create(
     model="gpt-4o-mini-tts",
     voice="ballad",
     input="Today is a wonderful day to build something people love!",
-    instructions="Speak with an indian accent.",
+    instructions="Accent: Speak in a thick Indian Accent",
     speed=1.0,
 )
 # Write the binary content to file
